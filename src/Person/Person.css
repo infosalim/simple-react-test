@@ -6,3 +6,13 @@
     padding: 16px;
     text-align: center;
 }
+
+.Person h4{
+    color: black;
+}
+
+@media (min-width: 500){
+    .Person {
+        width: 450px;
+    }
+}

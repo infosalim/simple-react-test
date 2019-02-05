@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -43,19 +43,9 @@ class App extends Component {
   }
   render() {
 
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      outline: 'none',
-      transition: '.3s ease-in',
-      display: 'inline-block'
-    }
-
     let persons = null;
+    let btnClass = '';
+
     if (this.state.showPerson) {
       persons = (
         <div>
@@ -69,29 +59,28 @@ class App extends Component {
           })}
         </div>
       )
-
-      style.backgroundColor = 'red';
+      btnClass = classes.red;
     }
 
-    const classes = [];
+    const AssignedClasses = [];
 
     if (this.state.person <= 2) {
-      classes.push('red'); // classes = ['red'];
+      AssignedClasses.push(classes.red); // AssignedClasses = ['red'];
     }
     if (this.state.person <= 1) {
-      classes.push('bold'); // classes = ['red','bold']'
+      AssignedClasses.push(classes.bold); // AssignedClasses = ['red','bold']'
     }
 
 
     return (
-        <div className="App">
-          <h1>Salim Hossain</h1>
-          <p className={classes.join(' ')}>A Front End Web Developer</p>
-          <button
-            style={style}
-            onClick={this.togglePersonHandler}>Toggle Person</button>
-          {persons}
-        </div>
+      <div className={classes.App}>
+        <h1>Salim Hossain</h1>
+        <p className={AssignedClasses.join(' ')}>A Front End Web Developer</p>
+        <button
+          className={btnClass}
+          onClick={this.togglePersonHandler}>Toggle Person</button>
+        {persons}
+      </div>
     );
   }
 }
