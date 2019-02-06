@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './App.css';
-import Person from './Person/Person';
+import Person from '../components/Persons/Person/Person';
 
 class App extends Component {
   state = {
@@ -75,7 +75,7 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <h1>Salim Hossain</h1>
-        <p className={AssignedClasses.join(' ')}>A Front End Web Developer</p>
+        <p className={AssignedClasses.join(' ')}>Front End Web Developer</p>
         <button
           className={btnClass}
           onClick={this.togglePersonHandler}>Toggle Person</button>
